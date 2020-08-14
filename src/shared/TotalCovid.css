@@ -1,0 +1,17 @@
+.totalCovid {
+  width: auto;
+  padding: 4px;
+  font-size: 32px;
+  display: inline-block;
+  font-weight: 700;
+}
+
+.totalCovidText {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.align-items-center {
+  text-align: center;
+  display: inline-block;
+}
