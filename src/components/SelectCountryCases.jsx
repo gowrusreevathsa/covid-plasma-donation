@@ -10,6 +10,7 @@ class SelectCountryCases extends Component {
       covidCases: 0,
       activeCases: 0,
       deaths: 0,
+      newCases: 0,
       countries: [],
     };
 
@@ -38,6 +39,7 @@ class SelectCountryCases extends Component {
     let covidCases = 0;
     let activeCases = 0;
     let deaths = 0;
+    let newCases = 0;
     return fetch(
       "https://covid-193.p.rapidapi.com/statistics?country=" + String(country),
       {
@@ -54,8 +56,9 @@ class SelectCountryCases extends Component {
         covidCases = data.response["0"]["cases"]["total"];
         activeCases = data.response["0"]["cases"]["active"];
         activeCases = data.response["0"]["deaths"]["total"];
+        newCases = data.response["0"]["cases"]["new"];
       })
-      .then(() => this.setState({ covidCases, activeCases, deaths }))
+      .then(() => this.setState({ covidCases, activeCases, deaths, newCases }))
       .catch((err) => {
         console.log(err);
       });
@@ -97,30 +100,19 @@ class SelectCountryCases extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <fieldset>
-            {/* <legend>Select a country</legend>
+          <CaseDetails
+            region="Select a country"
+            covidCases={this.state.covidCases}
+            activeCases={this.state.activeCases}
+            deaths={this.state.deaths}
+            newCases={this.state.newCases}
+          >
             <select value={this.state.country} onChange={this.handleChange}>
               {listCountries}
             </select>
             <br />
-            <span className="totalCovid">Total: {this.state.covidCases}</span>
-            <br />
-            <span className="totalCovid">Active: {this.state.activeCases}</span>
-            <br />
-            <span className="totalCovid">Deaths: {this.state.deaths}</span> */}
-            <CaseDetails
-              region={this.state.country}
-              covidCases={this.state.covidCases}
-              activeCases={this.state.activeCases}
-              deaths={this.state.deaths}
-            >
-              <select value={this.state.country} onChange={this.handleChange}>
-                {listCountries}
-              </select>
-            </CaseDetails>
-          </fieldset>
+          </CaseDetails>
         </form>
-        {/* <ul>{listCountries}</ul> */}
       </div>
     );
   }

@@ -9,6 +9,7 @@ class TotalCovidCases extends React.Component {
       covidCases: 0,
       activeCases: 0,
       Deaths: 0,
+      newCases: 0,
     };
   }
 
@@ -22,6 +23,7 @@ class TotalCovidCases extends React.Component {
     let covidCases = 0;
     let activeCases = 0;
     let deaths = 0;
+    let newCases = 0;
     fetch("https://covid-193.p.rapidapi.com/statistics?country=all", {
       method: "GET",
       headers: {
@@ -34,8 +36,9 @@ class TotalCovidCases extends React.Component {
         covidCases = data.response["0"]["cases"]["total"];
         activeCases = data.response["0"]["cases"]["active"];
         deaths = data.response["0"]["deaths"]["total"];
+        newCases = activeCases = data.response["0"]["cases"]["new"];
       })
-      .then(() => this.setState({ covidCases, activeCases, deaths }))
+      .then(() => this.setState({ covidCases, activeCases, deaths, newCases }))
       .catch((err) => {
         console.log(err);
       });
@@ -49,6 +52,7 @@ class TotalCovidCases extends React.Component {
           covidCases={this.state.covidCases}
           activeCases={this.state.activeCases}
           deaths={this.state.deaths}
+          newCases={this.state.newCases}
         />
       </div>
     );
