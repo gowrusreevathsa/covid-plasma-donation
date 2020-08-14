@@ -70,7 +70,7 @@ class SelectCountryCases extends Component {
       method: "GET",
       headers: {
         "x-rapidapi-host": "covid-193.p.rapidapi.com",
-        "x-rapidapi-key": "7462fc126bmsh61e1b04c8ef6952p1c3ffdjsn332eaa43c91d",
+        "x-rapidapi-key": /* API Key hidden for security reasons */,
       },
     })
       .then((response) => response.json())
@@ -98,22 +98,20 @@ class SelectCountryCases extends Component {
     ));
 
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <CaseDetails
-            region="Select a country"
-            covidCases={this.state.covidCases}
-            activeCases={this.state.activeCases}
-            deaths={this.state.deaths}
-            newCases={this.state.newCases}
-          >
-            <select value={this.state.country} onChange={this.handleChange}>
-              {listCountries}
-            </select>
-            <br />
-          </CaseDetails>
-        </form>
-      </div>
+      <form onSubmit={this.handleSubmit}>
+        <CaseDetails
+          region="Select a country"
+          covidCases={this.state.covidCases}
+          activeCases={this.state.activeCases}
+          deaths={this.state.deaths}
+          newCases={this.state.newCases}
+        >
+          <select value={this.state.country} onChange={this.handleChange}>
+            {listCountries}
+          </select>
+          <br />
+        </CaseDetails>
+      </form>
     );
   }
 }

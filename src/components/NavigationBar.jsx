@@ -6,7 +6,8 @@ const NavigationBar = () => {
     <div className="navbar">
       <a>Home</a>
       <a>About</a>
-      <a>Contact</a>
+      <a>Health Info</a>
+      <a>Can you donate plasma?</a>
     </div>
   );
 };

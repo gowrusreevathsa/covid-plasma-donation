@@ -12,12 +12,8 @@ ReactDOM.render(
   <React.StrictMode>
     <NavigationBar />
     <TotalCovidCases />
-    <div>
-      <CountryCovidCases />
-    </div>
-    <div>
-      <SelectCountryCases />
-    </div>
+    <CountryCovidCases />
+    <SelectCountryCases />
     <App />
   </React.StrictMode>,
   document.getElementById("root")

@@ -16,7 +16,7 @@ class TotalCovidCases extends React.Component {
   componentDidMount() {
     this.getTotalCases();
 
-    this.timerID = setInterval(() => this.getTotalCases(), 15000);
+    this.timerID = setInterval(() => this.getTotalCases(), 300000);
   }
 
   getTotalCases() {
@@ -28,7 +28,7 @@ class TotalCovidCases extends React.Component {
       method: "GET",
       headers: {
         "x-rapidapi-host": "covid-193.p.rapidapi.com",
-        "x-rapidapi-key": "7462fc126bmsh61e1b04c8ef6952p1c3ffdjsn332eaa43c91d",
+        "x-rapidapi-key": /* API Key hidden for security reasons */,
       },
     })
       .then((response) => response.json())
@@ -36,7 +36,7 @@ class TotalCovidCases extends React.Component {
         covidCases = data.response["0"]["cases"]["total"];
         activeCases = data.response["0"]["cases"]["active"];
         deaths = data.response["0"]["deaths"]["total"];
-        newCases = activeCases = data.response["0"]["cases"]["new"];
+        newCases = data.response["0"]["cases"]["new"];
       })
       .then(() => this.setState({ covidCases, activeCases, deaths, newCases }))
       .catch((err) => {
@@ -46,15 +46,13 @@ class TotalCovidCases extends React.Component {
 
   render() {
     return (
-      <div>
-        <CaseDetails
-          region="Worldwide"
-          covidCases={this.state.covidCases}
-          activeCases={this.state.activeCases}
-          deaths={this.state.deaths}
-          newCases={this.state.newCases}
-        />
-      </div>
+      <CaseDetails
+        region="Worldwide"
+        covidCases={this.state.covidCases}
+        activeCases={this.state.activeCases}
+        deaths={this.state.deaths}
+        newCases={this.state.newCases}
+      />
     );
   }
 }
