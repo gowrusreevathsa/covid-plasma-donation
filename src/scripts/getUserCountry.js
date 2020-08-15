@@ -15,7 +15,6 @@ export function getUserCountry() {
 }
 
 
-
 getUserCountry() {
     console.log("Inside getUserCountry");
     let country = "all";

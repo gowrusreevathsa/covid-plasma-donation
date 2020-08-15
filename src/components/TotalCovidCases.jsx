@@ -28,7 +28,7 @@ class TotalCovidCases extends React.Component {
       method: "GET",
       headers: {
         "x-rapidapi-host": "covid-193.p.rapidapi.com",
-        "x-rapidapi-key": /* API Key hidden for security reasons */,
+        "x-rapidapi-key": "7462fc126bmsh61e1b04c8ef6952p1c3ffdjsn332eaa43c91d",
       },
     })
       .then((response) => response.json())

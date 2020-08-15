@@ -1,19 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
 import NavigationBar from "./components/NavigationBar";
 import TotalCovidCases from "./components/TotalCovidCases";
 import CountryCovidCases from "./components/CountryCovidCases";
 import SelectCountryCases from "./components/SelectCountryCases";
+import HomeCards from "./components/HomeCards";
 import * as serviceWorker from "./serviceWorker";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
     <NavigationBar />
-    <TotalCovidCases />
-    <CountryCovidCases />
-    <SelectCountryCases />
+    <div className="container">
+      <div className="row">
+        <TotalCovidCases />
+        <CountryCovidCases />
+        <SelectCountryCases />
+      </div>
+    </div>
+    <br />
+    <div className="container">
+      <HomeCards />
+    </div>
     <App />
   </React.StrictMode>,
   document.getElementById("root")

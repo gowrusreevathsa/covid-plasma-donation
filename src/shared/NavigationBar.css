@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
   width: 100%;
   background-color: #555555;
   overflow: auto;
@@ -8,7 +8,7 @@
 .navbar a {
   float: left;
   text-align: center;
-  padding: 12px;
+  padding: 12px 20px;
   color: #ffffff;
   text-decoration: none;
   font-size: 17px;
@@ -17,4 +17,4 @@
 
 .navbar a:hover {
   background-color: #000000;
-}
+} */
