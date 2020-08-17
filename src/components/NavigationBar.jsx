@@ -11,15 +11,8 @@ import {
 
 const NavigationBar = () => {
   return (
-    // <div className="navbar">
-    //   <a>Home</a>
-    //   <a>About</a>
-    //   <a>Health Info</a>
-    //   <a>Can you donate plasma?</a>
-    // </div>
-
-    <Navbar color="light" light expand="md">
-      <NavbarBrand href="#">React-Bootstrap</NavbarBrand>
+    <Navbar color="dark" dark expand="md">
+      <NavbarBrand href="#">Plasma Donation</NavbarBrand>
       <NavbarToggler />
       <Collapse navbar>
         <Nav className="mr-auto" navbar>

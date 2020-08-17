@@ -8,26 +8,22 @@ class CaseDetails extends Component {
 
   render() {
     return (
-      //   <fieldset className="col-sm-4">
-      //     <legend>{this.props.region}</legend>
-      //     {this.props.children}
-      //     <span className="totalCovid">Total: {this.props.covidCases}</span>
-      //     <br /> {this.props.newCases}
-      //     <br />
-      //     <span className="totalCovid">Active: {this.props.activeCases}</span>
-      //     <br />
-      //     <span className="totalCovid">Deaths: {this.props.deaths}</span>
-      //   </fieldset>
-
-      <div className="col-12 col-md-4">
-        <Card className="h-100">
+      <div className="col-12 col-md-4 mt-5">
+        <Card className="h-100 caseDetailsCard">
           <CardBody>
-            <CardTitle>{this.props.region}</CardTitle>
+            <CardTitle>
+              <span className="font-weight-bold">
+                {this.props.region}
+                <span style={{ fontSize: "12" }}>{this.props.children}</span>
+              </span>
+            </CardTitle>
             <CardSubtitle>
-              Total: {this.props.covidCases} <br />
-              Active: {this.props.activeCases} <br />
-              Deaths: {this.props.deaths}
-              {this.props.children}
+              <span className="caseDetails">
+                Total: {this.props.covidCases} (
+                <span>{this.props.newCases}</span>) <br />
+                Active: {this.props.activeCases} <br />
+                Deaths: {this.props.deaths}
+              </span>
             </CardSubtitle>
           </CardBody>
         </Card>

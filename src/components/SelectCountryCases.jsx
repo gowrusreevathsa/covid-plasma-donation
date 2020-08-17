@@ -99,7 +99,7 @@ class SelectCountryCases extends Component {
 
     return (
       <CaseDetails
-        region="Select a country"
+        // region="Select a country"
         covidCases={this.state.covidCases}
         activeCases={this.state.activeCases}
         deaths={this.state.deaths}
@@ -110,7 +110,6 @@ class SelectCountryCases extends Component {
             {listCountries}
           </select>
         </form>
-        <br />
       </CaseDetails>
     );
   }
