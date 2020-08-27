@@ -17,10 +17,13 @@ const NavigationBar = () => {
       <Collapse navbar>
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <NavLink href="#">Link</NavLink>
+            <NavLink href="#">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Home</NavLink>
+            <NavLink href="#">About</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">GitHub</NavLink>
           </NavItem>
         </Nav>
       </Collapse>

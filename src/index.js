@@ -24,7 +24,6 @@ ReactDOM.render(
     <div className="container">
       <HomeCards />
     </div>
-    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

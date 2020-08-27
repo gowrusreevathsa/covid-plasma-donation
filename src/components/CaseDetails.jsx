@@ -9,7 +9,7 @@ class CaseDetails extends Component {
   render() {
     return (
       <div className="col-12 col-md-4 mt-5">
-        <Card className="h-100 caseDetailsCard">
+        <Card className="h-100 caseDetailsCard popShadow">
           <CardBody>
             <CardTitle>
               <span className="font-weight-bold">
