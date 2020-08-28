@@ -1,11 +1,25 @@
 import React, { Component } from "react";
+import { Card, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 
 class NewsArticle extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <>
-        <h5>This is a news article</h5>
+        <Card className="h-100 ">
+          <CardBody>
+            <CardTitle>
+              <span className="font-weight-bold">{this.props.title}</span>
+            </CardTitle>
+            <CardSubtitle>
+              <span>{this.props.description}</span>
+              <span>{this.props.content}</span>
+            </CardSubtitle>
+          </CardBody>
+        </Card>
       </>
     );
   }

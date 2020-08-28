@@ -7,13 +7,20 @@ class NewsPost extends Component {
     super(props);
 
     this.state = {
-      newsData: "",
+      newsData: [
+        {
+          source: "",
+          title: "",
+          description: "",
+          url: "",
+          content: "",
+        },
+      ],
     };
   }
 
   componentDidMount() {
     this.getNewsData();
-    console.log("Done");
   }
 
   getNewsData() {
@@ -22,9 +29,7 @@ class NewsPost extends Component {
       .then((r) => r.json())
       .then((r) => r.articles)
       .then((r) => {
-        // console.log(r);
         let len = r.length;
-        console.log(len);
 
         for (let i = 0; i < len; ++i) {
           newsData.push({
@@ -34,9 +39,8 @@ class NewsPost extends Component {
             url: r[i]["url"],
             content: r[i]["content"],
           });
-          console.log(r[i]["source"]["name"]);
         }
-
+        console.log(newsData);
         this.setState({
           newsData,
         });
@@ -44,14 +48,16 @@ class NewsPost extends Component {
   }
 
   render() {
-    return (
-      <>
-        <h3>This is News Post section</h3>
-        {/* <h3>{this.state.newsData}</h3> */}
-        {newsURL}
-        <NewsArticle />
-      </>
-    );
+    const newsArticles = this.state.newsData.map((article) => (
+      <NewsArticle
+        source={article.source}
+        title={article.title}
+        description={article.description}
+        content={article.content}
+        url={article.url}
+      />
+    ));
+    return <>{newsArticles}</>;
   }
 }
 
