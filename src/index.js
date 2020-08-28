@@ -9,6 +9,7 @@ import HomeCards from "./components/HomeCards";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
+import NewsPost from "./components/NewsPost";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -24,6 +25,7 @@ ReactDOM.render(
     <div className="container">
       <HomeCards />
     </div>
+    <NewsPost />
   </React.StrictMode>,
   document.getElementById("root")
 );
